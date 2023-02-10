@@ -6,7 +6,6 @@ system", this is because the user your running the script as has a undefined Exe
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
 
 
-
 HOW TO FETCH THE CODE FROM git
 CLONE THE REPO : 
 2) Command to run on GIT BASH before commiting
@@ -25,7 +24,6 @@ INSTALL ALL REQUIRED LIBS
 10) pip install beautifulsoup4
 11) pip install requests soupsieve lxml
 
-
-9) pip install flask
-10) In the current dir, run "python run.py"   --> it will run server like this- * Running on http://127.0.0.1:5000
-11) Open URL and check
+12) pip install flask
+13) In the current dir, run "python run.py"   --> it will run server like this- * Running on http://127.0.0.1:5000
+14) Open URL and check
