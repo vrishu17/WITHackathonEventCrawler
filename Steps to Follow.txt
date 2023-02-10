@@ -17,8 +17,12 @@ py -3 -m venv venv
 4) pip install requests
 5) pip install beautifulsoup4
 6) pip3 install requests soupsieve lxml
+7) pip install Flask
 
 
 7) Command to run on GIT BASH before commiting
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
+
+
+8) [notice] To update, run: python.exe -m pip install --upgrade pip
