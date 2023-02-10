@@ -6,19 +6,26 @@ system", this is because the user your running the script as has a undefined Exe
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
 
 
-2) Command to set the venv as virtual env
-py -3 -m venv venv
 
-
-3) Activate the venv
-.\venv\Scripts\activate
-
-
-4) pip install requests
-5) pip install beautifulsoup4
-6) pip3 install requests soupsieve lxml
-
-
-7) Command to run on GIT BASH before commiting
+HOW TO FETCH THE CODE FROM git
+CLONE THE REPO : 
+2) Command to run on GIT BASH before commiting
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
+
+
+ONCE YOU GET REPO ON LOCAL, NEED TO CREATE VENV
+6) py -m venv D:/Vrushali/Learning/Python/Code/GIT/WITHackathonEventCrawler/venv
+7) py -3 -m venv venv
+8) .\venv\Scripts\activate
+
+
+INSTALL ALL REQUIRED LIBS
+9) pip install requests
+10) pip install beautifulsoup4
+11) pip install requests soupsieve lxml
+
+
+9) pip install flask
+10) In the current dir, run "python run.py"   --> it will run server like this- * Running on http://127.0.0.1:5000
+11) Open URL and check
