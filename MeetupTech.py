@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from datetime import datetime
 from bs4 import BeautifulSoup
 import requests
 
@@ -59,8 +60,9 @@ def get_all_meetups():
 
         try:
             evenDateTime = item.select('.eventTimeDisplay-startDate')[0].get_text()
-            #print(evenDateTime)
+            # print(evenDateTime)
             li["evenDateTime"] = evenDateTime
+
         except Exception as e:
             # raise e
             eventType = ''
@@ -92,5 +94,4 @@ def get_all_meetups():
     #print(eventVenue)
     return lo
 
-print(get_all_meetups())
-
+# print(get_all_meetups())

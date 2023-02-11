@@ -1,11 +1,12 @@
 from flask import Flask, render_template
 import MeetupTech
 
-app = Flask(__name__, template_folder='uitemplates')
+app = Flask(__name__, template_folder='uitemplates',static_folder='uitemplates')
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    tech_events = MeetupTech.get_all_meetups()
+    return render_template("geekTest.html", events=tech_events)
 
 @app.route("/tech")
 def tech():
