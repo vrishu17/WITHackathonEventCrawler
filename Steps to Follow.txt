@@ -18,6 +18,7 @@ ONCE YOU GET REPO ON LOCAL, NEED TO CREATE VENV
 6) py -m venv D:/Vrushali/Learning/Python/Code/GIT/WITHackathonEventCrawler/venv
 7) py -3 -m venv venv
 8) .\venv\Scripts\activate
+HOW TO CHECK WHETHER YOU ARE IN VENV:	check python --version is working
 
 
 INSTALL ALL REQUIRED LIBS
