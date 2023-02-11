@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import MeetupTech
 
 app = Flask(__name__, template_folder='uitemplates')
 
@@ -8,11 +9,7 @@ def index():
 
 @app.route("/tech")
 def tech():
-    tech_events = [
-        {"name": "Tech Conference 2023", "date": "2023-03-01"},
-        {"name": "AI Summit 2022", "date": "2022-10-01"},
-        {"name": "Cybersecurity Symposium 2022", "date": "2022-06-01"},
-    ]
+    tech_events = MeetupTech.get_all_meetups()
     return render_template("tech.html", events=tech_events)
 
 @app.route("/sports")
