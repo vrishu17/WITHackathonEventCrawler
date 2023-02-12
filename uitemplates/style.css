@@ -100,7 +100,7 @@
 
 		/* Styling the hover effect
 			of events section */
-		section .events ul li:hover .time {
+		section .events ul li .time:hover{
 			background: #e91e63;
 		}
 
