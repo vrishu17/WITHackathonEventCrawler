@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from datetime import datetime
+import datetime
 from bs4 import BeautifulSoup
 import requests
 
@@ -59,9 +59,35 @@ def get_all_meetups():
             eventType = ''
 
         try:
-            evenDateTime = item.select('.eventTimeDisplay-startDate')[0].get_text()
-            # print(evenDateTime)
-            li["evenDateTime"] = evenDateTime
+            # eventDateTime = item.select('.eventTimeDisplay-startDate')[0].get_text()
+            # # print(eventDateTime)
+            # li["eventDateTime"] = eventDateTime
+
+            datetime_val = item.select("time")[0]
+            if datetime_val and 'datetime' in datetime_val.attrs:
+                datetime_num = datetime_val['datetime']
+                datetimeobj = datetime.datetime.fromtimestamp(int(datetime_num) / 1e3)
+                print(datetimeobj)
+
+                dt_timezone = datetimeobj.astimezone().tzname()
+                dt_day = datetimeobj.strftime('%A')
+                dt_month = datetimeobj.strftime('%b')
+                dt_date = datetimeobj.strftime('%d')
+                dt_year = datetimeobj.strftime('%Y')
+                dt_time = datetimeobj.strftime('%H:%M')
+
+                # print(dt_timezone)
+                # print(dt_day)
+                # print(dt_month)
+                # print(dt_date)
+                # print(dt_year)
+                li["eventTimezone"] = dt_timezone
+                li["eventDay"] = dt_day
+                li["eventMonth"] = dt_month
+                li["eventDate"] = dt_date
+                li["eventYear"] = dt_year
+                li["eventTime"] = dt_time
+
 
         except Exception as e:
             # raise e
@@ -89,7 +115,7 @@ def get_all_meetups():
     #print(eventTitle)
     #print(eventDesc)
     #print(eventType)
-    #print(evenDateTime)
+    #print(eventDateTime)
     #print(eventLink)
     #print(eventVenue)
     return lo

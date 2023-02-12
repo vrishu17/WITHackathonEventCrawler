@@ -6,7 +6,7 @@ app = Flask(__name__, template_folder='uitemplates',static_folder='uitemplates')
 @app.route("/")
 def index():
     tech_events = MeetupTech.get_all_meetups()
-    return render_template("geekTest.html", events=tech_events)
+    return render_template("index.html", events=tech_events)
 
 @app.route("/tech")
 def tech():

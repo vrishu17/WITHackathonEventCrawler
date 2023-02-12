@@ -1,4 +1,3 @@
-
 		/* Styling the body */
 		body {
 			margin: 0;
@@ -52,6 +51,8 @@
 		section .leftBox .content p {
 			margin: 10px 0 0;
 			padding: 0;
+			text-align:justify;
+            text-justify:values;
 		}
 
 		/* Styling the three events section */
@@ -117,6 +118,18 @@
 			line-height: 30px;
 		}
 
+			section .events ul li .time h3 {
+			position: absolute;
+			margin: 0;
+			padding: 0;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: #fff;
+			font-size: 20px;
+			line-height: 20px;
+		}
+
 		/* Styling the texts of time
 		class of events section */
 		section .events ul li .time h2 span {
@@ -163,6 +176,7 @@
 			font-size: 18px;
 			transition: .5s;
 		}
+
 
 		/* Styling the details class's hover effect */
 		section .events ul li .details a:hover {
