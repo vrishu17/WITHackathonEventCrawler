@@ -23,11 +23,12 @@ def get_all_sports_meetups():
     for i in read_urls():
         for k, v in i.items():
             if k == 'sports' and v.startswith(sitenames.meetup):
-                all_tech_events.append(AllMeetups.get_all_meetups_from_one_url(v))
+                all_tech_events.extend(AllMeetups.get_all_meetups_from_one_url(v))
     return all_tech_events
 
 def get_all_meetups():
     all_events = get_all_tech_meetups() + get_all_sports_meetups()
+    # print(all_events)
     all_events = sorted(all_events, key=lambda d: d['datetimeobj'])  #, reverse=True
     return all_events[0:2]
 

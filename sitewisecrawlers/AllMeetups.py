@@ -40,6 +40,7 @@ def get_all_meetups_from_one_url(url):
         try:
             eventDesc = item.select('.description-markdown--p')[0].get_text()
             li["eventDesc"] = eventDesc
+            li["eventDescShort"] = eventDesc[0:200] + '...'
         except Exception as e:
             # raise e
             eventDesc = ''
