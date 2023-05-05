@@ -9,7 +9,7 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
 
 HOW TO FETCH THE CODE FROM git
 CLONE THE REPO : 
-2) Command to run on GIT BASH before commiting
+2) Command to run on GIT BASH before committing
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
