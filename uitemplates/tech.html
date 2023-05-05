@@ -1,12 +1,14 @@
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>Tech Events</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <h1>Tech Events</h1>
     <ul>
       {% for event in events %}
-        <li>{{ event.name }} - {{ event.date }}</li>
+        <li>{{ event.eventTitle }} - {{ event.evenDateTime }}</li>
       {% endfor %}
     </ul>
   </body>

@@ -1,12 +1,70 @@
-<html>
-  <head>
-    <title>Upcoming Events</title>
-  </head>
-  <body>
-    <h1>Upcoming Events</h1>
-    <ul>
-      <li><a href="{{ url_for('tech') }}">Tech Events</a></li>
-      <li><a href="{{ url_for('sports') }}">Sports Events</a></li>
-    </ul>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+    <title>KeepUp</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+	<section>
+		<div class="leftBox">
+			<div class="content">
+				<h1>
+					Upcoming Events
+				</h1>
+
+           <p>
+             With the idea of enabling our employees to attend the latest tech networking events
+             and the events of their passion, we have created this website to provide a list of
+             various upcoming events happening in your locality. Please click on the below links
+			 to select the type of event you are interested in:
+           </p>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('tech') }}">Tech Events</a></li>
+        <li><a href="{{ url_for('sports') }}">Sports Events</a></li>
+      </ul>
+    </nav>
+			</div>
+		</div>
+
+		<div class="events">
+			<ul>
+			  <li>
+				  {% for event in events %}
+				    <div class="time">
+						<h3>
+							{{ event.eventMonth }}
+							{{ event.eventDate }}
+							{{ event.eventYear }}
+							{{ event.eventDay }}
+							{{ event.eventTime }}
+							{{ event.eventTimezone }}
+						</h3>
+					</div>
+					<div class="details">
+						<h3>
+							{{ event.eventTitle }}
+						</h3>
+						<p align="justify">
+						<small>
+							{{ event.eventDescShort }}
+						</small>
+						</p>
+						<p><b>{{ event.eventVenue }}</b></p>
+
+						<a href={{ event.eventLink }}>View Details</a>
+					</div>
+					<div style="clear: both;"></div>
+
+				  {% endfor %}
+				<!-- Add more rows for additional events -->
+			  </li>
+			</ul>
+		</div>
+	</section>
+</body>
+
 </html>
